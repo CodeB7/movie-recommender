@@ -12,9 +12,7 @@ from flask import request
 import time
 @app.route('/')
 def anyName():
-	start=time.time()
-	user_id  = request.args.get('user_id', None)
-	movie_id  = request.args.get('movie_id', None)
+	# My edit
 	if not (user_id or movie_id):
 		return '404 ERROR !!! <br>Please provide a movie name<br><br>Example:<br><br>http://0.0.0.0:5003?user_id=4&movie_id=400<br><br>http://0.0.0.0:5003?user_id=500&movie_id=1000'
 	prediction_score = predict.run_all(user_id, movie_id)
